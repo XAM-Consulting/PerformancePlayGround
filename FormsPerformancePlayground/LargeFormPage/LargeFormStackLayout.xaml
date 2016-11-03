@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+        xmlns:local="clr-namespace:FormsPerformancePlayground;assembly=FormsPerformancePlayground" 
+        x:Class="FormsPerformancePlayground.LargeFormStackLayout"
+        BindingContext="{x:Static local:ViewModelLocator.LargeFormViewModel}">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+             <x:Double x:Key="EntryHeight">120</x:Double>
+             <x:String x:Key="ButtonColor">Green</x:String>
+             <Style x:Key="StackEntryStyleWide" TargetType="Entry">
+                <Setter Property="Margin" Value="20, 0, 0, 0" />
+                <Setter Property="HeightRequest" Value="{StaticResource EntryHeight}" />
+            </Style>
+            <Style x:Key="StackEntryStyle" TargetType="Entry">
+                <Setter Property="Margin" Value="20, 0, 0, 0" />
+            </Style>
+            <Style TargetType="Label">
+                <Setter Property="FontSize" Value="15" />
+            </Style>
+            <Style x:Key="LargeButtonStyle" TargetType="Button">
+                <Setter Property="Margin" Value="20, 0, 0, 0" />
+                <Setter Property="BorderRadius" Value="10" />
+                <Setter Property="BackgroundColor" Value="Silver" />
+                <Setter Property="TextColor" Value="{StaticResource ButtonColor}" />
+            </Style>
+            <Style TargetType="Button">
+                <Setter Property="TextColor" Value="{StaticResource ButtonColor}" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Padding="20" Spacing="15">
+                <Label Text="Not required reason" />
+                <Entry HeightRequest="{StaticResource EntryHeight}" />
+                <Label Text="1. Claim Details"  />
+                <Label Text="1.1 Present at inspection" />
+                <Entry Style="{StaticResource StackEntryStyle}"/>
+                <Label Text="2. Damage report" />
+                <Label Text="2.1 Client Discussion" />
+                <Entry Style="{StaticResource StackEntryStyleWide}"/>
+                <Label Text="2.2 Resultant Damage" />
+                <Entry Style="{StaticResource StackEntryStyleWide}"/>
+                <Label Text="2.3 Cause of Damage" />
+                <Entry Style="{StaticResource StackEntryStyleWide}"/>
+                
+                <Label Text="2.4 Maintenance Issues (Contributed to claim)" />
+                <Label Text="2.4.1 Maintenance Issues" />
+                <Entry Style="{StaticResource StackEntryStyleWide}"/>
+                <local:YesNoFormSection Title="2.4.2 Insured Advised?" YesCommand="{Binding YesPressed}" NoCommand="{Binding NoPressed}" /> <!--YesCommand="{Binding YesPressed}" NoCommand="{Binding NoPressed}"-->
+                <Label Text="2.4.3 Estimate" />
+                <Entry Style="{StaticResource StackEntryStyle}"/>
+                
+                <Label Text="2.5 Maintenance Issues (Not related to claim event)" />
+                <Label Text="2.5.2 Maintenance Issues - MISSING 2.5.1" />
+                <Entry Style="{StaticResource StackEntryStyleWide}"/>
+                <local:YesNoFormSection Title="2.5.3 Insured Advised?" />
+                <Label Text="2.5.4 Estimate" />
+                <Entry Style="{StaticResource StackEntryStyle}"/>
+
+                <Label Text="2.5.5 Recommendations" />
+                <StackLayout Margin="5">
+                    <Button Text="Accept" Style="{StaticResource LargeButtonStyle}"/>
+                    <Button Text="Accept - Review: Client seeks alternative settlement method" Style="{StaticResource LargeButtonStyle}"/>
+                    <Button Text="Accept - Review unable to warrant" Style="{StaticResource LargeButtonStyle}"/>
+                    <Button Text="Accept - Review: Component of claim requires cash settling" Style="{StaticResource LargeButtonStyle}"/>
+                    <Button Text="Do Not Accept - Not Covered" Style="{StaticResource LargeButtonStyle}"/>
+                    <Button Text="Do Not Accept - Requires further investigation" Style="{StaticResource LargeButtonStyle}"/>
+                    <Button Text="Unsure - Policy coverage" Style="{StaticResource LargeButtonStyle}"/>
+                    <Button Text="Unsure - Unable to warrant" Style="{StaticResource LargeButtonStyle}"/>
+                    <Button Text="Unsure - Requires causation resport" Style="{StaticResource LargeButtonStyle}"/>
+                    <Button Text="Cancel Claim - Under excess" Style="{StaticResource LargeButtonStyle}"/>
+                    <Button Text="Cancel Claim - Client wishes to withdraw claim" Style="{StaticResource LargeButtonStyle}"/>
+                    <Button Text="Cancel Claim - No resultant damage - " Style="{StaticResource LargeButtonStyle}"/>
+                </StackLayout>
+                <Label Text="2.5.6 Recommendations Text" />
+                <Entry Style="{StaticResource StackEntryStyleWide}"/>
+
+                <Label Text="4 Additional Details" />
+                <local:YesNoFormSection Title="4.1 Where there contents involve the claim"/>
+                <Label Text="4.1.1 Were there contents involved in the claim text"/>
+                <Entry Style="{StaticResource StackEntryStyleWide}"/>
+
+                <Label Text="5 Building Details" />
+                <Label Text="5.1 Building Type" />
+                <local:FormButtons ButtonWidth="110" ButtonsPerRow="6" ItemsSource="{Binding BuildingTypeList}" Margin="20,0,0,0"  />
+                <Label Text="5.2 Design Type" />
+                <local:FormButtons ButtonWidth="135" ButtonsPerRow="5" ItemsSource="{Binding DesignTypeList}" Margin="20,0,0,0"  />
+                <Label Text="5.3 Construction Type" />
+                <local:FormButtons ButtonWidth="110" ButtonsPerRow="6" ItemsSource="{Binding ConstructionTypeList}" Margin="20,0,0,0" />
+                <Label Text="5.4 Roof Type" />
+                <local:FormButtons ButtonWidth="135" ButtonsPerRow="5" ItemsSource="{Binding RoofTypeList}" Margin="20,0,0,0" />
+                <Label Text="5.5 age (Approx Years)" />
+                <local:FormButtons ButtonWidth="110" ButtonsPerRow="6" ItemsSource="{Binding AgeList}" Margin="20,0,0,0" />
+                <Label Text="5.6 M2" />
+                <local:FormButtons ButtonWidth="110" ButtonsPerRow="6" ItemsSource="{Binding M2List}" Margin="20,0,0,0" />
+
+                <Label Text="5.7.1 Out building 1" />
+                <local:FormButtons ButtonWidth="135" ButtonsPerRow="5" ItemsSource="{Binding OutBuilding1List}" Margin="20,0,0,0" />
+                <Label Text="5.7.2 Out building 2" />
+                <local:FormButtons ButtonWidth="135" ButtonsPerRow="5" ItemsSource="{Binding OutBuilding1List}" Margin="20,0,0,0" />
+                <Label Text="5.7.3 Out building 3" />
+                <local:FormButtons ButtonWidth="135" ButtonsPerRow="5" ItemsSource="{Binding OutBuilding1List}" Margin="20,0,0,0" />
+                
+                <local:YesNoFormSection Title="5.8 Does the claim involve main roof damage" />
+                <Label Text="5.8.1 Main Rooof Repair Estimate Completion Date" />
+                <Entry Style="{StaticResource StackEntryStyle}"/>
+                <local:YesNoFormSection Title="5.8.2 Does the claim involve damaged asbestos on site" />
+                <local:YesNoFormSection Title="5.8.3 Is the property habitable" />
+                <local:YesNoFormSection Title="5.8.4 Will the client have to move out during repairs" />
+                <local:YesNoFormSection Title="5.8.5 Does the claim involve mould" />
+                <local:YesNoFormSection Title="5.8.6 Does the claim involve other hazards on site" />
+                <Label Text="5.8.7 Does the claim involve damage to the pool fencing" />
+                <StackLayout Orientation="Horizontal">
+                    <Button Text="Yes" Style="{StaticResource LargeButtonStyle}" WidthRequest="220" />
+                    <Button Text="No" Style="{StaticResource LargeButtonStyle}" WidthRequest="220" />
+                    <Button Text="No Pool fencing on site" Style="{StaticResource LargeButtonStyle}" WidthRequest="220" />
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

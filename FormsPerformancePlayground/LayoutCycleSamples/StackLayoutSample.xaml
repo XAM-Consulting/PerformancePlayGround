@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="FormsPerformancePlayground.StackLayoutSample">
+    <ContentPage.Content>
+		<StackLayout x:Name="mainLayout" >
+            <Label Text="One"></Label>
+            <Label Text="Two"></Label>
+            <Label Text="Three"></Label>
+            <Label Text="Four"></Label>
+            <Label Text="Five"></Label>
+            <Label Text="Six"></Label>
+            <Label Text="Seven"></Label>
+            <Label Text="Eight"></Label>
+			<Label x:Name="time" Text="Nine"></Label>
+			<Button Clicked="Handle_Clicked"></Button>
+		</StackLayout>
+    </ContentPage.Content>
+</ContentPage>

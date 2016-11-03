@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+        xmlns:local="clr-namespace:FormsPerformancePlayground;assembly=FormsPerformancePlayground" 
+		x:Class="FormsPerformancePlayground.LargeFormGrid"
+		BindingContext="{x:Static local:ViewModelLocator.LargeFormViewModel}"
+		>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <GridLength x:Key="LabelRowHeight">25</GridLength>
+            <GridLength x:Key="RowHeight">45</GridLength>
+            <GridLength x:Key="DoubleRowHeight">100</GridLength>
+            <x:Double x:Key="EntryHeight">120</x:Double>
+            <x:String x:Key="ButtonColor">Green</x:String>
+            <Style x:Key="StackEntryStyle" TargetType="Entry">
+                <Setter Property="Margin" Value="20, 0, 0, 0" />
+            </Style>
+            <Style x:Key="StackEntryStyleWide" TargetType="Entry">
+                <Setter Property="Margin" Value="20, 0, 0, 0" />
+                <Setter Property="HeightRequest" Value="{StaticResource EntryHeight}" />
+            </Style>
+            <Style x:Key="LargeButtonStyle" TargetType="Button">
+                <Setter Property="Margin" Value="20, 0, 0, 0" />
+                <Setter Property="BorderRadius" Value="10" />
+                <Setter Property="BackgroundColor" Value="Silver" />
+                <Setter Property="TextColor" Value="{StaticResource ButtonColor}" />
+            </Style>
+            <Style TargetType="Button">
+                <Setter Property="TextColor" Value="{StaticResource ButtonColor}" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <ScrollView>
+            <local:AutoGrid Padding="20" RowSpacing="20">
+                <Grid.RowDefinitions>
+                    <!--0 --><RowDefinition Height="{StaticResource LabelRowHeight}" />
+                    <!--1 --><RowDefinition Height="{StaticResource DoubleRowHeight}" />
+                    <!--2 --><RowDefinition Height="{StaticResource LabelRowHeight}" />
+                    <!--3 --><RowDefinition Height="{StaticResource LabelRowHeight}" />
+                    <!--4 --><RowDefinition Height="{StaticResource RowHeight}" />
+                    <!--5 --><RowDefinition Height="{StaticResource LabelRowHeight}" />
+                    <!--6 --><RowDefinition Height="{StaticResource LabelRowHeight}" />
+                    <!--7 --><RowDefinition Height="{StaticResource DoubleRowHeight}" />
+                    <!--8 --><RowDefinition Height="{StaticResource LabelRowHeight}" />
+                    <!--9 --><RowDefinition Height="{StaticResource DoubleRowHeight}" />
+                    <!--10--><RowDefinition Height="{StaticResource LabelRowHeight}" />
+                    <!--11--><RowDefinition Height="{StaticResource DoubleRowHeight}" />
+                    <!--12--><RowDefinition Height="{StaticResource LabelRowHeight}" />
+                    <!--13--><RowDefinition Height="{StaticResource LabelRowHeight}" />
+                    <!--14--><RowDefinition Height="{StaticResource DoubleRowHeight}" />
+                    <!--15--><RowDefinition Height="{StaticResource RowHeight}" />
+                    <!--16--><RowDefinition Height="{StaticResource LabelRowHeight}" />
+                    <!--17--><RowDefinition Height="{StaticResource RowHeight}" />
+                    <!--18--><RowDefinition Height="{StaticResource LabelRowHeight}" />
+                    
+                    <RowDefinition Height="Auto" />
+
+                    <!--31--><RowDefinition Height="{StaticResource LabelRowHeight}" />
+                    <!--32--><RowDefinition Height="{StaticResource DoubleRowHeight}" />
+                    <!--33--><RowDefinition Height="{StaticResource LabelRowHeight}" />
+                    <!--34--><RowDefinition Height="{StaticResource RowHeight}" />
+                    <!--35--><RowDefinition Height="{StaticResource LabelRowHeight}" />
+                    <!--36--><RowDefinition Height="{StaticResource DoubleRowHeight}" />
+                    <!--37--><RowDefinition Height="{StaticResource LabelRowHeight}" />
+                    <!--38--><RowDefinition Height="{StaticResource LabelRowHeight}" />
+                    <!--39--><RowDefinition Height="Auto" />
+                    <!--40--><RowDefinition Height="{StaticResource LabelRowHeight}" />
+                    <!--41--><RowDefinition Height="Auto" />
+                    <!--42--><RowDefinition Height="{StaticResource LabelRowHeight}" />
+                    <!--43--><RowDefinition Height="Auto" />
+                    <!--44--><RowDefinition Height="{StaticResource LabelRowHeight}" />
+                    <!--45--><RowDefinition Height="Auto" />
+                    <!--46--><RowDefinition Height="{StaticResource LabelRowHeight}" />
+                    <!--47--><RowDefinition Height="Auto" />
+                    <!--48--><RowDefinition Height="{StaticResource LabelRowHeight}" />
+                    <!--49--><RowDefinition Height="Auto" />
+                    <!--50--><RowDefinition Height="{StaticResource LabelRowHeight}" />
+                    <!--51--><RowDefinition Height="Auto" />
+                    <!--52--><RowDefinition Height="{StaticResource LabelRowHeight}" />
+                    <!--53--><RowDefinition Height="Auto" />
+                    <!--54--><RowDefinition Height="{StaticResource LabelRowHeight}" />
+                    <!--55--><RowDefinition Height="Auto" />
+                    <!--56--><RowDefinition Height="{StaticResource RowHeight}" />
+                    <!--57--><RowDefinition Height="{StaticResource LabelRowHeight}" />
+                    <!--58--><RowDefinition Height="{StaticResource RowHeight}" />
+                    <!--59--><RowDefinition Height="{StaticResource RowHeight}" />
+                    <!--60--><RowDefinition Height="{StaticResource RowHeight}" />
+                    <!--61--><RowDefinition Height="{StaticResource RowHeight}" />
+                    <!--62--><RowDefinition Height="{StaticResource RowHeight}" />
+                    <!--63--><RowDefinition Height="{StaticResource RowHeight}" />
+                    <!--64--><RowDefinition Height="{StaticResource LabelRowHeight}" />
+                    <!--65--><RowDefinition Height="{StaticResource RowHeight}" />
+                    
+                </Grid.RowDefinitions>
+                <!--0 --><Label Text="Not required reason" local:AutoGrid.AutoRow="Begin" />
+                <!--1 --><Entry HeightRequest="{StaticResource EntryHeight}" local:AutoGrid.AutoRow="Step" />
+                <!--2 --><Label Text="1. Claim Details" local:AutoGrid.AutoRow="Step" />
+                <!--3 --><Label Text="1.1 Present at inspection" local:AutoGrid.AutoRow="Step"/>
+                <!--4 --><Entry Style="{StaticResource StackEntryStyle}" local:AutoGrid.AutoRow="Step"/>
+                <!--5 --><Label Text="2. Damage report" local:AutoGrid.AutoRow="Step" />
+                <!--6 --><Label Text="2.1 Client Discussion" local:AutoGrid.AutoRow="Step"/>
+                <!--7 --><Entry Style="{StaticResource StackEntryStyleWide}" local:AutoGrid.AutoRow="Step" />
+                <!--8 --><Label Text="2.2 Resultant Damage" local:AutoGrid.AutoRow="Step" />
+                <!--9 --><Entry Style="{StaticResource StackEntryStyleWide}" local:AutoGrid.AutoRow="Step"/>
+                <!--10--><Label Text="2.3 Cause of Damage" local:AutoGrid.AutoRow="Step" />
+                <!--11--><Entry Style="{StaticResource StackEntryStyleWide}" local:AutoGrid.AutoRow="Step" />
+
+                <!--12--><Label Text="2.4 Maintenance Issues (Contributed to claim)" local:AutoGrid.AutoRow="Step" />
+                <!--13--><Label Text="2.4.1 Maintenance Issues" local:AutoGrid.AutoRow="Step" />
+                <!--14--><Entry Style="{StaticResource StackEntryStyleWide}" local:AutoGrid.AutoRow="Step" />
+                <!--15--><local:YesNoFormSection Title="2.4.2 Insured Advised?" local:AutoGrid.AutoRow="Step" />
+                <!--16--><Label Text="2.4.3 Estimate" local:AutoGrid.AutoRow="Step" />
+                <!--17--><Entry Style="{StaticResource StackEntryStyle}" local:AutoGrid.AutoRow="Step" />
+
+                <!--18--><Label Text="2.5.5 Recommendations" local:AutoGrid.AutoRow="Step"  />
+                <!--new 19 --><Grid RowSpacing="0" local:AutoGrid.AutoRow="Step">
+                    <!--19--><Button Text="Accept" Style="{StaticResource LargeButtonStyle}" Grid.Row="0" />
+                    <!--20--><Button Text="Accept - Review: Client seeks alternative settlement method" Style="{StaticResource LargeButtonStyle}" Grid.Row="1" />
+                    <!--21--><Button Text="Accept - Review unable to warrant" Style="{StaticResource LargeButtonStyle}" Grid.Row="2" />
+                    <!--22--><Button Text="Accept - Review: Component of claim requires cash settling" Style="{StaticResource LargeButtonStyle}" Grid.Row="3" />
+                    <!--23--><Button Text="Do Not Accept - Not Covered" Style="{StaticResource LargeButtonStyle}" Grid.Row="4" />
+                    <!--24--><Button Text="Do Not Accept - Requires further investigation" Style="{StaticResource LargeButtonStyle}" Grid.Row="5" />
+                    <!--25--><Button Text="Unsure - Policy coverage" Style="{StaticResource LargeButtonStyle}" Grid.Row="6" />
+                    <!--26--><Button Text="Unsure - Unable to warrant" Style="{StaticResource LargeButtonStyle}" Grid.Row="7" />
+                    <!--27--><Button Text="Unsure - Requires causation resport" Style="{StaticResource LargeButtonStyle}" Grid.Row="8" />
+                    <!--28--><Button Text="Cancel Claim - Under excess" Style="{StaticResource LargeButtonStyle}" Grid.Row="9" />
+                    <!--29--><Button Text="Cancel Claim - Client wishes to withdraw claim" Style="{StaticResource LargeButtonStyle}" Grid.Row="10" />
+                    <!--30--><Button Text="Cancel Claim - No resultant damage - " Style="{StaticResource LargeButtonStyle}" Grid.Row="11" />
+                </Grid>
+
+                <!--31--><Label Text="2.5.6 Recommendations Text" local:AutoGrid.AutoRow="Step" />
+                <!--32--><Entry Style="{StaticResource StackEntryStyleWide}" local:AutoGrid.AutoRow="Step" />
+                <!--33--><Label Text="4 Additional Details" local:AutoGrid.AutoRow="Step" />
+                <!--34--><local:YesNoFormSection Title="4.1 Where there contents involve the claim" local:AutoGrid.AutoRow="Step"/>
+                <!--35--><Label Text="4.1.1 Were there contents involved in the claim text" local:AutoGrid.AutoRow="Step"/>
+                <!--36--><Entry Style="{StaticResource StackEntryStyleWide}" local:AutoGrid.AutoRow="Step"/>
+
+                <!--37--><Label Text="5 Building Details" local:AutoGrid.AutoRow="Step" />
+                <!--38--><Label Text="5.1 Building Type" local:AutoGrid.AutoRow="Step" />
+                <!--39--><local:FormButtons ButtonWidth="110" ButtonsPerRow="6" ItemsSource="{Binding BuildingTypeList}" Margin="20,0,0,0" local:AutoGrid.AutoRow="Step" />
+                <!--40--><Label Text="5.2 Design Type" local:AutoGrid.AutoRow="Step" />
+                <!--41--><local:FormButtons ButtonWidth="135" ButtonsPerRow="5" ItemsSource="{Binding DesignTypeList}" Margin="20,0,0,0" local:AutoGrid.AutoRow="Step" />
+                <!--42--><Label Text="5.3 Construction Type" local:AutoGrid.AutoRow="Step" />
+                <!--43--><local:FormButtons ButtonWidth="110" ButtonsPerRow="6" ItemsSource="{Binding ConstructionTypeList}" Margin="20,0,0,0" local:AutoGrid.AutoRow="Step" />
+                <!--44--><Label Text="5.4 Roof Type" local:AutoGrid.AutoRow="Step"  />
+                <!--45--><local:FormButtons ButtonWidth="135" ButtonsPerRow="5" ItemsSource="{Binding RoofTypeList}" Margin="20,0,0,0" local:AutoGrid.AutoRow="Step" />
+                <!--46--><Label Text="5.5 age (Approx Years)" local:AutoGrid.AutoRow="Step" />
+                <!--47--><local:FormButtons ButtonWidth="110" ButtonsPerRow="6" ItemsSource="{Binding AgeList}" Margin="20,0,0,0" local:AutoGrid.AutoRow="Step" />
+                <!--48--><Label Text="5.6 M2" local:AutoGrid.AutoRow="Step" />
+                <!--49--><local:FormButtons ButtonWidth="110" ButtonsPerRow="6" ItemsSource="{Binding M2List}" Margin="20,0,0,0" local:AutoGrid.AutoRow="Step" />
+
+                <!--50--><Label Text="5.7.1 Out building 1" local:AutoGrid.AutoRow="Step" />
+                <!--51--><local:FormButtons ButtonWidth="135" ButtonsPerRow="5" ItemsSource="{Binding OutBuilding1List}" Margin="20,0,0,0" local:AutoGrid.AutoRow="Step" />
+                <!--52--><Label Text="5.7.2 Out building 2" local:AutoGrid.AutoRow="Step" />
+                <!--53--><local:FormButtons ButtonWidth="135" ButtonsPerRow="5" ItemsSource="{Binding OutBuilding1List}" Margin="20,0,0,0" local:AutoGrid.AutoRow="Step" />
+                <!--54--><Label Text="5.7.3 Out building 3" local:AutoGrid.AutoRow="Step" />
+                <!--55--><local:FormButtons ButtonWidth="135" ButtonsPerRow="5" ItemsSource="{Binding OutBuilding1List}" Margin="20,0,0,0" local:AutoGrid.AutoRow="Step" />
+
+                <!--56--><local:YesNoFormSection Title="5.8 Does the claim involve main roof damage" local:AutoGrid.AutoRow="Step"/>
+                <!--57--><Label Text="5.8.1 Main Rooof Repair Estimate Completion Date" local:AutoGrid.AutoRow="Step" />
+                <!--58--><Entry Style="{StaticResource StackEntryStyle}" local:AutoGrid.AutoRow="Step" />
+                <!--59--><local:YesNoFormSection Title="5.8.2 Does the claim involve damaged asbestos on site" local:AutoGrid.AutoRow="Step" />
+                <!--60--><local:YesNoFormSection Title="5.8.3 Is the property habitable" local:AutoGrid.AutoRow="Step" />
+                <!--61--><local:YesNoFormSection Title="5.8.4 Will the client have to move out during repairs" local:AutoGrid.AutoRow="Step" />
+                <!--62--><local:YesNoFormSection Title="5.8.5 Does the claim involve mould" local:AutoGrid.AutoRow="Step" />
+                <!--63--><local:YesNoFormSection Title="5.8.6 Does the claim involve other hazards on site" local:AutoGrid.AutoRow="Step" />
+                <!--64--><Label Text="5.8.7 Does the claim involve damage to the pool fencing" local:AutoGrid.AutoRow="Step" />
+                <!--65--><StackLayout Orientation="Horizontal" local:AutoGrid.AutoRow="Step">
+                    <Button Text="Yes" Style="{StaticResource LargeButtonStyle}" WidthRequest="220" />
+                    <Button Text="No" Style="{StaticResource LargeButtonStyle}" WidthRequest="220" />
+                    <Button Text="No Pool fencing on site" Style="{StaticResource LargeButtonStyle}" WidthRequest="220" />
+                </StackLayout>
+            </local:AutoGrid>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
