@@ -76,7 +76,7 @@
   <ItemGroup>
     <ProjectReference Include="..\FormsPerformancePlayground\FormsPerformancePlayground.csproj">
       <Project>{74612239-FAAD-4FD9-87AB-4162F3C20A24}</Project>
-      <Name>FormsPerformancePlayground</Name>
+      <Name>FormsPerformancePlaygroundLayout</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Xamarin.Forms\Xamarin.Forms.Core\Xamarin.Forms.Core.csproj">
       <Project>{57B8B73D-C3B5-4C42-869E-7B2F17D354AC}</Project>

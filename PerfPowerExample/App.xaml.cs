@@ -1,18 +1,14 @@
 ﻿using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 
-namespace FormsPerformancePlayground
+namespace PerfPowerExample
 {
     public partial class App : Application
     {
-        public static NavigationPage Nav;
-
         public App()
         {
             InitializeComponent();
 
-            Nav = new NavigationPage(new MainPage());
-            MainPage = Nav;
+            MainPage = new PerfPowerExamplePage();
         }
 
         protected override void OnStart()
@@ -31,4 +27,3 @@ namespace FormsPerformancePlayground
         }
     }
 }
-

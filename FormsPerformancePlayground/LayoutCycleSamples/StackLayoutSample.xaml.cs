@@ -16,7 +16,7 @@ namespace FormsPerformancePlayground
 
         bool Timer()
         {
-            time.Text = $"counter {counter}";
+            counterLabel.Text = $"counter {counter}";
             counter++;
             return counter < 20;
         }

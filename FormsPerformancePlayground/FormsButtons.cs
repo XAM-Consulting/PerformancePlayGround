@@ -36,56 +36,11 @@ namespace FormsPerformancePlayground
 
         public FormButtons()
         {
-            //var button = new Button();
-            //button.Text = "test";
-
-            //Draw();
-
-            //Content = button;
-            //Content = new Label { Text = "Hello ContentView" };
-
-            /*mainGrid.ColumnDefinitions.Add(new ColumnDefinition() { Width = new GridLength(600) });
-            mainGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(60) });
-            mainGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(60) });
-            mainGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(60) });
-
-            _titleLabel = new Label { };
-            mainGrid.Children.Add(_titleLabel, 0, 0);
-            _titleLabel.SetBinding(Label.TextProperty, new Binding("Title"));
-            _titleLabel.BindingContext = this;
-
-            var yesButton = new Button { Text = "Yes" };
-            mainGrid.Children.Add(yesButton, 1, 0);
-            yesButton.SetBinding(Button.CommandProperty, new Binding("YesCommand"));
-            yesButton.BorderRadius = 30;
-            yesButton.BackgroundColor = Color.Silver;
-
-            var noButton = new Button { Text = "No" };
-            mainGrid.Children.Add(noButton, 2, 0);
-            noButton.SetBinding(Button.CommandProperty, new Binding("NoCommand"));
-            noButton.BorderRadius = 30;
-            noButton.BackgroundColor = Color.Silver;
-
-            Content = mainGrid;*/
-        }
-
-        private void testerror()
-        {
-            for (int i = 0; i < 6; i++)
-            {
-
-                System.Diagnostics.Debug.WriteLine("blah#1: " + i);
-            }
-
-            for (int i = 0; i < 3; i++)
-            {
-                System.Diagnostics.Debug.WriteLine("balah#2: " + i);
-            }
+            
         }
 
         private void Draw()
         {
-            //testerror();
             if (ButtonsPerRow > 0 && ItemsSource != null)
             {
                 int numItems = 0;

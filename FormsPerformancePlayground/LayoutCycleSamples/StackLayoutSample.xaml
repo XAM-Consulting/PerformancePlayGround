@@ -10,7 +10,7 @@
             <Label Text="Six"></Label>
             <Label Text="Seven"></Label>
             <Label Text="Eight"></Label>
-			<Label x:Name="time" Text="Nine"></Label>
+			<Label x:Name="counterLabel" Text="Nine"></Label>
 			<Button Clicked="Handle_Clicked"></Button>
 		</StackLayout>
     </ContentPage.Content>

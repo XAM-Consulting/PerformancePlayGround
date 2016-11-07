@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="FormsPerformancePlayground.GridLayoutSample">
-    <ContentPage.Content>
-		<Grid>
-
+    <ContentPage.Content>		
+		<Grid>			
 			<Grid.ColumnDefinitions>
 				<ColumnDefinition Width="*"></ColumnDefinition>
 			</Grid.ColumnDefinitions>
@@ -10,9 +9,11 @@
                 <RowDefinition Height="*"></RowDefinition>
             </Grid.RowDefinitions>
 			
-            <Label Grid.Row="0" x:Name="time" Text="Nine"></Label>
+            <!--<Label Grid.Row="0"  x:Name="counterLabel" Text="Nine" ></Label>-->
 
-            <!--<BoxView Grid.Row="0" HorizontalOptions="Start" x:Name="box" BackgroundColor="Blue" ></BoxView>-->
+			<ContentView>
+			    <BoxView x:Name="box" HorizontalOptions="Start" BackgroundColor="Navy" ></BoxView>
+			</ContentView>
 			
             <Label Grid.Row="1" Text="One"></Label>
             <Label Grid.Row="2" Text="Two"></Label>
@@ -22,8 +23,7 @@
             <Label Grid.Row="6" Text="Six"></Label>
             <Label Grid.Row="7"  Text="Seven"></Label>
             <Label Grid.Row="8" Text="Eight"></Label>
-			<Button Grid.Row="9" Clicked="Handle_Clicked"></Button>
-			
+			<Button Grid.Row="9" Clicked="Handle_Clicked"></Button>    			
 		</Grid>
     </ContentPage.Content>
 </ContentPage>

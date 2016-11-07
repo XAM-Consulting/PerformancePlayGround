@@ -18,8 +18,8 @@ namespace FormsPerformancePlayground
 
         bool Timer()
         {
-            time.Text = $"counter {counter}";
-            //box.WidthRequest = counter % 2 * 10 + 5;
+            //counterLabel.Text = $"counter {counter}";
+            box.WidthRequest = counter % 2 * 10 + 5;
             counter++;
             return counter < 20;
         }

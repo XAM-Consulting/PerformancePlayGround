@@ -1,47 +1,37 @@
 ﻿using System.Threading.Tasks;
+using Xamarin.Forms;
 
 namespace FormsPerformancePlayground
 {
     public class MainPageViewModel
     {
-        LargeFormStackLayout _largeFormStackLayout;
-        LargeFormGrid _largeFormGrid;
-
         public MainPageViewModel()
         {
-            Task.Run(() =>
-            {
-                InflateViews();
-            });
         }
 
-        void InflateViews()
-        {
-            _largeFormStackLayout = new LargeFormStackLayout();
-            _largeFormGrid = new LargeFormGrid();
-        }
-
-        public System.Windows.Input.ICommand FormStackTapped
+        public System.Windows.Input.ICommand StackTapped
         {
             get
             {
                 return new Xamarin.Forms.Command(() =>
                 {
                     Xamarin.Forms.Performance.Clear();
-                    App.Nav.PushAsync(_largeFormStackLayout); 
+                    Performance.Start("PageLoaded", "PageLoaded", "PageLoaded");
+                    App.Nav.PushAsync(new StackLayoutSample()); 
                 }
                 );
             }
         }
 
-        public System.Windows.Input.ICommand FormGridTapped
+        public System.Windows.Input.ICommand GridTapped
         {
             get
             {
                 return new Xamarin.Forms.Command(() =>
                 {
                     Xamarin.Forms.Performance.Clear();
-                    App.Nav.PushAsync(_largeFormGrid);
+                    Performance.Start("PageLoaded", "PageLoaded", "PageLoaded");
+                    App.Nav.PushAsync(new GridLayoutSample());
                 }
 
                 );

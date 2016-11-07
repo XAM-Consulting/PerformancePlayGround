@@ -7,8 +7,8 @@
 		>
     <ContentPage.Content>
 	    <StackLayout>
-            <Button Text="Large Form Grid" Command="{Binding FormGridTapped}"/>
-            <Button Text="Large Form StackLayout" Command="{Binding FormStackTapped}"/>
+            <Button Text="Understanding GridLayout" Command="{Binding GridTapped}"/>
+            <Button Text="Understanding StackLayout" Command="{Binding StackTapped}"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
